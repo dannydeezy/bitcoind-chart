@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "bitcoind.fullname" . }}
+  labels:
+    app: {{ template "bitcoind.name" . }}
+    chart: {{ template "bitcoind.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  ports:
+    - name: rpc
+      port: {{ .Values.service.rpcPort }}
+      targetPort: rpc
+    - name: p2p
+      port: {{ .Values.service.p2pPort }}
+      targetPort: p2p
+    - name: testnet
+      port: {{ .Values.service.testnetPort }}
+      targetPort: testnet
+    - name: testnet-p2p
+      port: {{ .Values.service.testnetP2pPort }}
+      targetPort: testnetp2pport
+    - name: zmqblock
+      port: {{ .Values.service.zmqBlockPort }}
+      targetPort: zmqblock
+    - name: zmqtx
+      port: {{ .Values.service.zmqTxPort }}
+      targetPort: zmqtx
+  selector:
+    app: {{ template "bitcoind.name" . }}
+    release: {{ .Release.Name }}
