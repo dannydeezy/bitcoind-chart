@@ -7,32 +7,28 @@ metadata:
     chart: {{ template "bitcoind.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
 spec:
   type: LoadBalancer
   ports:
     - name: rpc
       port: {{ .Values.service.rpcPort }}
-      targetPort: {{ .Values.service.rpcPort }}
+      targetPort: rpc
     - name: p2p
       port: {{ .Values.service.p2pPort }}
-      targetPort: {{ .Values.service.p2pPort }}
+      targetPort: p2p
     - name: testnet
       port: {{ .Values.service.testnetPort }}
-      targetPort: {{ .Values.service.testnetPort }}
+      targetPort: testnet
     - name: testnet-p2p
       port: {{ .Values.service.testnetP2pPort }}
-      targetPort: {{ .Values.service.testnetP2pPort }}
+      targetPort: testnetp2pport
     - name: zmqblock
       port: {{ .Values.service.zmqBlockPort }}
-      targetPort: {{ .Values.service.zmqBlockPort }}
+      targetPort: zmqblock
     - name: zmqtx
       port: {{ .Values.service.zmqTxPort }}
-      targetPort: {{ .Values.service.zmqTxPort }}
+      targetPort: zmqtx
   selector:
     app: {{ template "bitcoind.name" . }}
     release: {{ .Release.Name }}
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
 
