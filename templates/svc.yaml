@@ -14,22 +14,22 @@ spec:
   ports:
     - name: rpc
       port: {{ .Values.service.rpcPort }}
-      targetPort: rpc
+      targetPort: {{ .Values.service.rpcPort }}
     - name: p2p
       port: {{ .Values.service.p2pPort }}
-      targetPort: p2p
+      targetPort: {{ .Values.service.p2pPort }}
     - name: testnet
       port: {{ .Values.service.testnetPort }}
-      targetPort: testnet
+      targetPort: {{ .Values.service.testnetPort }}
     - name: testnet-p2p
       port: {{ .Values.service.testnetP2pPort }}
-      targetPort: testnetp2pport
+      targetPort: {{ .Values.service.testnetP2pPort }}
     - name: zmqblock
       port: {{ .Values.service.zmqBlockPort }}
-      targetPort: zmqblock
+      targetPort: {{ .Values.service.zmqBlockPort }}
     - name: zmqtx
       port: {{ .Values.service.zmqTxPort }}
-      targetPort: zmqtx
+      targetPort: {{ .Values.service.zmqTxPort }}
   selector:
     app: {{ template "bitcoind.name" . }}
     release: {{ .Release.Name }}
