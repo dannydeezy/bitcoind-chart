@@ -49,4 +49,5 @@ configurationFile:
     disablewallet=1
     txindex=0
     dbcache=4000
+    testnet=1
 
