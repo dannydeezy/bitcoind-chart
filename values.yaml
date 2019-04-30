@@ -50,3 +50,4 @@ configurationFile:
     txindex=0
     dbcache=4000
     rpcallowip=::/0
+    testnet=1
