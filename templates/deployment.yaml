@@ -43,7 +43,7 @@ spec:
             - name: data
               mountPath: /bitcoin
             {{- if .Values.configurationFile }}
-            - name: config
+            - name: configmap
               mountPath: /bitcoin/.bitcoin/bitcoin.conf
               subPath: bitcoin.conf
             {{- end }}
