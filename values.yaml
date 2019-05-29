@@ -4,7 +4,7 @@
 
 image:
   repository: gcr.io/lightning-sandbox/bitcoind
-  tag: latest
+  tag: 0
   pullPolicy: IfNotPresent
 
 service:
@@ -41,8 +41,6 @@ configurationFile:
   bitcoin.conf: |-
     server=1
     printtoconsole=1
-    rpcuser=rpcuser
-    rpcpassword=rpcpassword
     zmqpubrawblock=tcp://0.0.0.0:28332
     zmqpubrawtx=tcp://0.0.0.0:28333
     printtoconsole=1
@@ -50,3 +48,4 @@ configurationFile:
     txindex=0
     dbcache=1000
     rpcallowip=::/0
+    testnet=1
