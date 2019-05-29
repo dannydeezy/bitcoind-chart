@@ -46,6 +46,6 @@ configurationFile:
     printtoconsole=1
     disablewallet=1
     txindex=0
-    dbcache=1000
+    dbcache=12000
     rpcallowip=::/0
     testnet=1
