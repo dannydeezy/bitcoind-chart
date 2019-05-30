@@ -49,5 +49,4 @@ configurationFile:
     rpcallowip=::/0
     rpcuser=rpcuser
     rpcpassword=rpcpassword
-    testnet=1
     dbcache=12000
