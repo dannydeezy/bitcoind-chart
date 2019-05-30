@@ -45,7 +45,9 @@ configurationFile:
     zmqpubrawtx=tcp://0.0.0.0:28333
     printtoconsole=1
     disablewallet=1
-    txindex=0
-    dbcache=12000
+    txindex=1
     rpcallowip=::/0
+    rpcuser=rpcuser
+    rpcpassword=rpcpassword
     testnet=1
+    dbcache=12000
