@@ -4,7 +4,7 @@
 
 image:
   repository: gcr.io/lightning-sandbox/bitcoind
-  tag: old-b
+  tag: 3
   pullPolicy: IfNotPresent
 
 service:
@@ -49,5 +49,5 @@ configurationFile:
     rpcallowip=::/0
     rpcuser=rpcuser
     rpcpassword=rpcpassword
-    dbcache=12000
+    dbcache=1000
     testnet=1
